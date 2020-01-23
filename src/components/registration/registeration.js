@@ -1,7 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm, formValueSelector } from 'redux-form';
+import { Redirect } from 'react-router-dom';
 import validate from '../utils/validation';
+import { store } from 'react-notifications-component';
+
+//actions
+import { registerAction } from '../../actions';
 
 //images
 import shapeImage from '../../images/purple-blue-shape.png';
@@ -9,7 +14,32 @@ import shapeImage from '../../images/purple-blue-shape.png';
 class Registration extends React.Component{
     state = {
         isCollegeHBTU: true,
-        loading: false
+        loading: false,
+        error: false
+    }
+
+    componentDidUpdate(){
+        const { authReducer } = this.props;
+        
+        if( authReducer.error && this.state.error && !this.state.loading ){
+            console.log(authReducer)
+            store.addNotification({
+                title:  authReducer.error.title,
+                message:  authReducer.error.msg,
+                type: "danger",
+                insert: "bottom",
+                width: 300,
+                container: "bottom-left",
+                animationIn: ["animated", "fadeIn"],
+                animationOut: ["animated", "fadeOut"],
+                dismiss: {
+                duration: 4000,
+                onScreen: true
+                }
+            });
+            this.setState({ error: false});
+        }
+        
     }
 
     renderField = ({ input, label, type, input: { value }, meta: {pristine, valid, dirty, active, touched, error } }) => (
@@ -52,13 +82,20 @@ class Registration extends React.Component{
         );
       }
 
-    onFormSubmit = (formValues) => {
-        console.log(formValues);
-        this.setState({loading: true})
+    onFormSubmit = async (formValues) => {
+        // console.log(formValues);
+        this.setState({loading: true, error: true})
+        const response = await this.props.registerAction(formValues);
+        if(response){
+            this.setState({loading: false})
+        }
     }
 
     render(){
-        console.log(this.props.collegeValue)
+        if(this.props.authReducer.registered){{
+                return <Redirect to='/' />
+            }
+        }
         return(
             <div className='page-wrapper registration'>
                 <div className='form-wrapper'>
@@ -79,7 +116,7 @@ class Registration extends React.Component{
                             <div className='form-button'>
                                 <button className="button type1" >
                                     Register
-                                    {this.state.loading && <i class="fa fa-spinner fa-spin"></i>}
+                                    {this.state.loading && <i className="fa fa-spinner fa-spin"></i>}
                                 </button>
                             </div>
                         </form>
@@ -108,4 +145,15 @@ Registration = connect(
   }
 )(Registration)
 
-  export default Registration;
+const mapStateToProps =(state) => {
+    return{
+        authReducer: state.authReducer,
+        
+    }
+}
+
+const connectProps = connect(mapStateToProps, {
+    registerAction
+})(Registration)
+
+  export default connectProps;

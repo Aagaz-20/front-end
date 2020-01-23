@@ -1,13 +1,44 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { store } from 'react-notifications-component';
+
+//actions
+import { loginAction } from '../../actions';
 
 //images
 import shapeImage from '../../images/red-orange-shape.png';
 
 class LoginForm extends React.Component{
     state={
-        loading: false
+        loading: false,
+        error: false
+    }
+
+    componentDidUpdate(){
+        const { authReducer } = this.props;
+        
+        if( authReducer.error && this.state.error && !this.state.loading ){
+            console.log(authReducer)
+            store.addNotification({
+                title:  authReducer.error.title,
+                message:  authReducer.error.msg,
+                type: "danger",
+                insert: "bottom",
+                width: 300,
+                container: "bottom-left",
+                animationIn: ["animated", "fadeIn"],
+                animationOut: ["animated", "fadeOut"],
+                dismiss: {
+                duration: 4000,
+                onScreen: true
+                }
+            });
+            this.setState({ error: false});
+        }
+        
     }
 
     renderField = ({ input, label, type, input: { value }, meta: {pristine, valid, dirty, active, touched, error } }) => (
@@ -28,11 +59,19 @@ class LoginForm extends React.Component{
         </div>
     );
 
-    onFormSubmit = (formValues) => {
-        console.log(formValues);
+    onFormSubmit = async (formValues) => {
+        // console.log(formValues);
+        this.setState({ error: true, loading: true })
+        const response = await this.props.loginAction(formValues);
+        if(response){
+            this.setState({ loading: false})
+        }
     }
 
     render(){
+        if(this.props.loginData){
+            return <Redirect to='/' />
+        }
         return(
             <div className='page-wrapper login'>
                 <div className='form-wrapper'>
@@ -43,10 +82,10 @@ class LoginForm extends React.Component{
                             <Field name='email' type='email' component={this.renderField} label='Email' />
                             <Field name='password' type='password' component={this.renderField} label='Password' />
                             <button className="button type1">Login
-                               {this.state.loading && <i class="fa fa-spinner fa-spin"></i>}
+                               {this.state.loading && <i className="fa fa-spinner fa-spin"></i>}
                                </button>
                         </form>
-                        <Link to='/forgotpassword' className='link'>
+                        <Link to='/resetpassword' className='link'>
                         <button className='button2 type2'>Forgot Password?</button>
                         </Link>
                     </div>
@@ -62,4 +101,15 @@ const formWrapper =  reduxForm({
     forceUnregisterOnUnmount: true
   })(LoginForm);
 
-export default formWrapper;
+const mapStateToProps = (state) => {
+    return{
+        authReducer: state.authReducer,
+        loginData: state.authReducer.loginData
+    }
+}
+
+const connectProps = connect(mapStateToProps,{
+    loginAction
+})(formWrapper)
+
+export default connectProps;
