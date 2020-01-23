@@ -1,0 +1,318 @@
+.page-wrapper.registration{
+    height: 150vh;
+    background: rgb(140, 0, 255);
+    position: relative;
+
+    .form-wrapper{
+        width: 80%;
+        height: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        img{
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .form-container{
+            width: 40%;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -60%);
+            text-align: center;
+
+            .form-title{
+                font-size: 80px;
+                font-family: 'Pacifico', cursive;
+                margin-bottom: 50px;
+                color: rgb(13, 1, 77);
+            }
+
+            form{
+                margin-top: 40px;
+                height: 85vh;
+                overflow: hidden;
+                overflow-y: scroll;
+
+                &::-webkit-scrollbar {
+                    width: 2px;
+                  }
+                
+                &::-webkit-scrollbar:hover {
+                    width: 4px;
+                  }
+                
+                  
+                  /* Track */
+                &::-webkit-scrollbar-track {
+                    background: #426792; 
+                  }
+                   
+                  /* Handle */
+                  &::-webkit-scrollbar-thumb {
+                    background: #0c0038; 
+                  }
+                  
+                  /* Handle on hover */
+                  &::-webkit-scrollbar-thumb:hover {
+                    background: #555; 
+                    width: 10px;
+                }
+            }
+
+            .input-field{
+                width: 90%;
+                height: 60px;
+                text-align: left;
+                margin: 0 auto;
+                display: block;
+                position: relative;
+                transition: all 0.2s ease;
+                margin-top: 1rem;
+
+                &:nth-child(1){
+                    position: relative;
+                    width: 40%;
+                    display: inline-block;
+                    margin-right: 10%;
+                }
+
+                &:nth-child(2){
+                    width: 40%;
+                    display: inline-block;
+                }
+    
+                .password-show{
+                    position: absolute;
+                    right: 1.3rem;
+                    top: 1rem;
+                    width: 2.5rem;
+                    cursor: pointer;
+                    z-index: 1000;
+    
+                    img{
+                        width: 3rem;
+                        position: relative;
+                    }
+    
+                }
+    
+    
+                &--label{
+                    color: black;
+                    position: absolute;
+                    left: 1rem;
+                    top: 0.7rem;
+                    font-size: 1.2rem;
+                    font-family: 'Nunito', sans-serif;
+                    font-weight: 500;
+                    transition: all 0.2s ease;
+                    z-index: 10;
+    
+                    &.touched{
+                        transform: translate( -1.1rem , -0.9rem) scale(0.7);
+                        color: rgb(1, 0, 59);
+                    }
+    
+                }
+    
+                &--value,
+                input{
+                    width: 100%;
+                    height: 3rem;
+                    border: 0.1rem solid black;
+                    border-radius: 0.3rem;
+                    outline: none;
+                    padding-left: 1rem;
+                    padding-top: 1rem;
+                    color: black;
+                    font-size: 1rem;
+                    z-index: 100;
+                    position: relative;
+                    background: transparent;
+                    font-family: 'Nunito', sans-serif;
+                    box-sizing: border-box;
+    
+                    &.touched{
+                        border: 0.2rem solid rgb(1, 0, 59);
+                    }
+    
+                    &.error{
+                        border-color: rgb(253, 80, 80);
+                    }
+            
+                    &-error{
+                        position: absolute;
+                        right: 0;
+                        color: rgb(253, 80, 80);
+                        font-size: 0.8rem;
+                        display: block;
+                        font-family: 'Nunito', sans-serif;
+                    }
+                }
+    
+                
+            }
+
+            .input-field--radio{
+                width: 100%;
+                height: 60px;
+                display: inline-block;
+                font-size: 1.2rem;
+                font-family: 'Nunito', sans-serif;
+                box-sizing: border-box;
+                padding-bottom: 2rem;
+                padding-top: 20px;
+                position: relative;
+
+                .radio-label{
+                    display: inline-block;
+                    text-align: left;
+                    position: relative;
+                    text-transform: capitalize;
+                    margin-right: 30px;
+                    font-size: 24px;
+                    font-weight: 600;
+                }
+
+                &--label{
+                    position: relative;
+                    margin-right: 2rem;
+                    padding-left: 1.5rem;
+                    cursor: pointer;
+                    font-weight: 550;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    text-transform: capitalize;
+
+                        /* Hide the browser's default radio button */
+                        input {
+                            position: absolute;
+                            opacity: 0;
+                            cursor: pointer;
+                        }
+                        
+                        /* Create a custom radio button */
+                        .checkmark {
+                            position: absolute;
+                            top: 1px;
+                            left: 0;
+                            height: 1.3rem;
+                            width: 1.3rem;
+                            background-color: #eee;
+                            border-radius: 50%;
+                        }
+                        
+                        /* On mouse-over, add a grey background color */
+                        :hover input ~ .checkmark {
+                            background-color: #ccc;
+                        }
+                        
+                        /* When the radio button is checked, add a blue background */
+                        input:checked ~ .checkmark {
+                            background-color: rgb(0, 12, 122);
+                        }
+                        
+                        /* Create the indicator (the dot/circle - hidden when not checked) */
+                        .checkmark:after {
+                            content: "";
+                            position: absolute;
+                            display: none;
+                        }
+                        
+                        /* Show the indicator (dot/circle) when checked */
+                        input:checked ~ .checkmark:after {
+                            display: block;
+                        }
+                        
+                        /* Style the indicator (dot/circle) */
+                        .checkmark:after {
+                            top: 6px;
+                            left: 6px;
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background: white;
+                        }
+
+                        &.optionOne{
+                            color: rgb(0, 4, 66);
+                        }
+                        &.optionTwo{
+                            color: rgb(0, 4, 66);
+                        }
+
+                }
+            }
+
+            .form-button{
+                .button{
+                    width: 200px;
+                    position: relative;
+                    padding: 1em 1.5em;
+                    border: none;
+                    background-color: transparent;
+                    cursor: pointer;
+                    outline: none;
+                    font-size: 20px;
+                    font-weight: 600;
+                    margin: 1em 0.8em;
+                    transition: all 0.5s ease;
+
+                    &:hover{
+                        letter-spacing: 2px;
+                    }
+                    
+                    &.type1{
+                        color: rgb(22, 0, 73);
+                        // Effect one
+                        &.type1::after,
+                        &.type1::before{
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        width: 30%;
+                        height: 20%;
+                        border: 2px solid;
+                        transition: all 0.6s ease;
+                        border-radius: 5px;
+                        }
+
+                        &.type1::after{
+                        bottom: 0;
+                        right: 0;
+                        border-top-color: transparent;
+                        border-left-color: transparent;
+                        border-bottom-color: rgb(22, 0, 73);
+                        border-right-color: rgb(22, 0, 73);
+                        }
+
+                        &.type1::before{
+                        top: 0;
+                        left: 0;
+                        border-bottom-color: transparent;
+                        border-right-color: transparent;
+                        border-top-color: rgb(22, 0, 73);
+                        border-left-color: rgb(22, 0, 73);
+                        }
+                        &.type1:hover:after,
+                        &.type1:hover:before{
+                        width: 100%;
+                        height: 100%;
+                        }
+                    }
+                }
+            }
+        
+        }
+    }
+}

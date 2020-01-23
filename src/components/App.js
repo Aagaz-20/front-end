@@ -6,6 +6,8 @@ import store from "./store";
 import history from "./history";
 
 import Home from './home/home';
+import Registration from './registration/registeration';
+import Login from './login/login';
 
 class App extends React.Component{
     render(){
@@ -13,6 +15,8 @@ class App extends React.Component{
             <Provider store={store}>
               <Router history={history}>
                 <Route path="/" exact component={Home} />
+                <Route path='/registration' exact component={Registration} />
+                <Route path='/login' exact component={Login} />
               </Router>
             </Provider>
           );
