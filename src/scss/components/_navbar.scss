@@ -1,0 +1,67 @@
+.navbar-container{
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    width: 90%;
+    height: auto;
+    z-index: 1000;
+
+    ul{
+        list-style: none;
+        text-align: right;
+
+        li{
+            display: inline;
+            padding: 10px 20px;
+            font-size: 22px;
+            font-family: 'Staatliches', cursive;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: black;
+            font-weight: 500;
+            transition: all 0.5s ease;
+            &.highlight{
+                background-color: rgb(47, 255, 158);
+                &:hover{
+                    letter-spacing: 0.5px;
+                }
+            }
+            &:hover{
+                background-color: rgb(47, 255, 158);
+            }
+        }
+
+        &.login{
+            li{
+                &.highlight{
+                    background-color: rgb(255, 188, 5);
+                }
+                &:hover{
+                    background-color: rgb(255, 188, 5);
+                }
+            }
+        }
+
+        &.registration{
+            li{
+                &.highlight{
+                    background-color: rgb(5, 205, 255);
+                }
+                &:hover{
+                    background-color: rgb(5, 205, 255);
+                }
+            }
+        }
+
+        &.resetpassword{
+            li{
+                &.highlight{
+                    background-color: rgb(24, 141, 0);
+                }
+                &:hover{
+                    background-color: rgb(24, 141, 0);
+                }
+            }
+        }
+    }
+}

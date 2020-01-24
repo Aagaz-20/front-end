@@ -37,9 +37,10 @@
 
             form{
                 margin-top: 40px;
-                height: 85vh;
+                height: 70vh;
                 overflow: hidden;
                 overflow-y: scroll;
+                transition: all 0.5 ease;
 
                 &::-webkit-scrollbar {
                     width: 2px;
@@ -76,6 +77,7 @@
                 position: relative;
                 transition: all 0.2s ease;
                 margin-top: 1rem;
+                transition: all 0.5 ease;
 
                 &:nth-child(1){
                     position: relative;
@@ -208,13 +210,13 @@
                             left: 0;
                             height: 1.3rem;
                             width: 1.3rem;
-                            background-color: #eee;
+                            background-color: rgb(176, 243, 255);
                             border-radius: 50%;
                         }
                         
                         /* On mouse-over, add a grey background color */
                         :hover input ~ .checkmark {
-                            background-color: #ccc;
+                            background-color: rgb(176, 243, 255);
                         }
                         
                         /* When the radio button is checked, add a blue background */
@@ -241,7 +243,7 @@
                             width: 8px;
                             height: 8px;
                             border-radius: 50%;
-                            background: white;
+                            background: rgb(176, 243, 255);
                         }
 
                         &.optionOne{

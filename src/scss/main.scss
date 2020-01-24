@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Cookie|Staatliches&display=swap');
+
 @import "abstracts/mixins";
 @import "abstracts/variables";
 
@@ -5,6 +7,15 @@
 @import "base/base";
 @import "base/utilities";
 
+@import "components/navbar";
+@import "components/mainLogo";
+@import "components/timer";
+
 @import "pages/registration";
 @import "pages/login";
 @import "pages/resetPassword";
+@import "pages/main";
+@import "pages/about";
+@import "pages/timeline";
+@import "pages/gallery";
+@import "pages/footer";

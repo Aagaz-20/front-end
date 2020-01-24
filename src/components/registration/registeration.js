@@ -92,9 +92,22 @@ class Registration extends React.Component{
     }
 
     render(){
-        if(this.props.authReducer.registered){{
-                return <Redirect to='/' />
-            }
+        if(this.props.authReducer.registered){
+            store.addNotification({
+                title:  'Success',
+                message:  'Registered Successfully',
+                type: "success",
+                insert: "bottom",
+                width: 300,
+                container: "bottom-left",
+                animationIn: ["animated", "fadeIn"],
+                animationOut: ["animated", "fadeOut"],
+                dismiss: {
+                duration: 4000,
+                onScreen: true
+                }
+            });
+            return <Redirect to='/' />
         }
         return(
             <div className='page-wrapper registration'>

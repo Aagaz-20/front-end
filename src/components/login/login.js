@@ -70,6 +70,20 @@ class LoginForm extends React.Component{
 
     render(){
         if(this.props.loginData){
+            store.addNotification({
+                title:  'Success',
+                message:  'Successfully Logged In',
+                type: "success",
+                insert: "bottom",
+                width: 300,
+                container: "bottom-left",
+                animationIn: ["animated", "fadeIn"],
+                animationOut: ["animated", "fadeOut"],
+                dismiss: {
+                duration: 4000,
+                onScreen: true
+                }
+            });
             return <Redirect to='/' />
         }
         return(

@@ -1,0 +1,68 @@
+.section-timeline{
+    width: 100%;
+    height: 120vh;
+    position: relative;
+    background-color: rgb(244,161,175)
+    ;
+
+    .border-container{
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: -250px;
+        left: 0;
+
+        img{
+            width: 100%;
+        }
+    }
+
+    .section-heading{
+        color: rgb(145, 0, 84);
+        font-size: 100px;
+        font-family: 'Cookie', cursive;;
+        position: absolute;
+        right: 10%;
+        top: 5%;
+        text-transform: capitalize;
+        z-index: 100;
+
+        .inner-cutout{
+            padding: 40px 0;
+            display: block;
+            // background-color:#ff6f69;/*#ff6f69*/
+                
+            margin: 2%;
+            padding-bottom: 40px;
+            // height: 300px;
+            width: 110%;
+            // background: radial-gradient(#ff6f69, #ff8b87);
+             background-size: 300%;
+            background-position:50% 50%;
+        
+        }
+        .knockout {
+            
+            vertical-align: middle;
+            text-align: center;
+            font-family: 'Cookie', cursive;
+            font-size:140px;
+            letter-spacing: 5px;
+            color: blue;
+            color: #fff;
+            background: linear-gradient(110deg, rgb(145, 0, 60) 33%, rgba(0, 0, 0, 0) 33%), linear-gradient(110deg, rgba(145, 0, 60, 0.507) 38%, rgb(145, 0, 60) 34%);
+            background-size: 400%;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            transform: translateY(-50px);
+            text-transform: capitalize;
+        }
+        .knockout{
+                animation: Gradient 5s ease infinite;
+                -webkit-animation: Gradient 15s ease infinite;
+                -moz-animation: Gradient 5s ease infinite;
+        }
+        
+    }
+}

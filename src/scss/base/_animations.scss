@@ -1,0 +1,32 @@
+@keyframes title{
+    0%{ text-shadow:rgba(10, 189, 240, 0.298039) 4px 4px 0px, rgba(254, 1, 1, 0.298039) -4px -4px 0px;}
+    10%{ text-shadow: rgba(254, 1, 1, 0.298039) 4px 4px 0px, rgba(10, 189, 240, 0.298039) -4px -4px 0px;}
+    15%{ text-shadow:rgba(10, 189, 240, 0.298039) 4px 4px 0px, rgba(254, 1, 1, 0.298039) -4px -4px 0px;}
+}
+
+
+@-webkit-keyframes Gradient {
+    0% {
+        background-position: 30% 50%
+    }
+    50% {
+        background-position: 25% 50%
+    }
+    100% {
+        background-position: 30% 50%
+    }
+    
+}
+
+@keyframes Gradient {
+    0% {
+        background-position: 10% 50%
+    }
+    50% {
+        background-position: 40% 50%
+    }
+    100% {
+        background-position: 10% 50%
+    }
+    
+}
