@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Cookie|Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cookie|Pacifico|Staatliches&display=swap');
 
 @import "abstracts/mixins";
 @import "abstracts/variables";
@@ -10,6 +10,7 @@
 @import "components/navbar";
 @import "components/mainLogo";
 @import "components/timer";
+@import "components/eventViewer";
 
 @import "pages/registration";
 @import "pages/login";
@@ -19,3 +20,8 @@
 @import "pages/timeline";
 @import "pages/gallery";
 @import "pages/footer";
+@import "pages/events";
+@import "pages/accomodation";
+@import "pages/sponsers";
+@import "pages/team";
+@import "pages/pronites";

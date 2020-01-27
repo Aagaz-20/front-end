@@ -1,10 +1,30 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { store } from 'react-notifications-component';
 
 //video
 import teaserVideo from '../../images/teaser-video.mp4';
 
 class Main extends React.Component{
+
+    notification = () => {
+        store.addNotification({
+            title:  'Conflict',
+            message:  "You are already Logged In",
+            type: "warning",
+            insert: "bottom",
+            width: 300,
+            container: "bottom-left",
+            animationIn: ["animated", "fadeIn"],
+            animationOut: ["animated", "fadeOut"],
+            dismiss: {
+            duration: 4000,
+            onScreen: true
+            }
+        });
+    }
+
     render(){
         return(
             <div className='section-main'>
@@ -30,13 +50,22 @@ class Main extends React.Component{
                         <use className="text" xlinkHref="#s-text"></use>
                     </svg>
                     </div>
-                    <Link to='/registration' className='link'>
+                    {this.props.authReducer && !this.props.authReducer.isLoggedIn && <Link to='/registration' className='link'>
                         <button className='button type1'>Register</button>
-                    </Link>
+                    </Link>}
+                    {this.props.authReducer && this.props.authReducer.isLoggedIn && <button className='button type1' onClick={this.notification}>Register</button>}
                 </div>
             </div>
         )
     }
 }
 
-export default Main;
+const mapStateToProps = (state) => {
+    return{
+        authReducer: state.authReducer
+    }
+}
+
+const connectProps = connect(mapStateToProps)(Main);
+
+export default connectProps;

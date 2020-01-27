@@ -1,0 +1,148 @@
+.section-footer{
+    height: 480px;
+    width: 100%;
+    background-color: rgb(162,217,253);
+    position: relative;
+
+    img.border{
+        width: 100%;
+        transform: translateY(-290px);
+    }
+
+    .logo-image{
+        width: 15%;
+        height: auto;
+        position: absolute;
+        top: 70px;
+        left: 9%;
+        z-index: 100;
+
+        img{
+            width: 100%;
+        }
+    }
+
+    .map{
+        position: absolute;
+        right: 10%;
+        top: 50px;
+    }
+
+    .dev-credits{
+        width: 100%;
+        font-size: 20px;
+        font-family: 'Staatliches', cursive;
+        letter-spacing: 2px;
+        word-spacing: 3px;
+        text-align: center;
+        color: rgb(37, 37, 37);
+        position: absolute;
+        bottom: 40px;
+        left: 0;
+        // transform: translateX(-50%);
+
+        img{
+            width: 20px;
+            display: inline-block;
+            transform: translateY(4px);
+        }
+    }
+
+    .social-media-icons{
+        position: absolute;
+        left: 6%;
+        top: 60%;
+        transition: all 0.3s ease;
+
+        .fa {
+            padding: 10px;
+            font-size: 30px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            text-decoration: none;
+            color: rgb(37, 37, 37);
+            margin-right: 10px;
+            transition: all 0.3s ease;
+
+            &:hover{
+                background: rgb(37, 37, 37);
+                color: white;
+                border-radius: 50%;
+            }
+          }
+    }
+
+    .contacts-container{
+        position: absolute;
+        top: 50px;
+        left: 40%;
+        font-family: 'Nunito', sans-serif;
+        text-transform: uppercase;
+
+        &--heading{
+            font-size: 40px;
+            color: rgb(37, 37, 37);
+            font-weight: 600;
+            display: block;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+
+            .subheading{
+                display: block;
+                margin-bottom: 20px;
+                font-size: 12px;
+                margin-left: 5px;
+                letter-spacing: 0;
+            }
+
+        }
+
+        span.contacts{
+            display: block;
+            margin-bottom: 7px;
+            font-size: 20px;
+            margin-left: 5px;
+
+            a{
+                color: rgb(37, 37, 37);
+                text-decoration: none;
+            }
+        }
+    }
+
+    .help-container{
+        position: absolute;
+        width: 25%;
+        top: 50px;
+        right: 0%;
+        font-family: 'Nunito', sans-serif;
+        text-transform: uppercase;
+
+        &--heading{
+            display: block;
+            font-size: 24px;
+            font-weight: 600;
+            color: rgb(37, 37, 37);
+            margin-bottom: 10px;
+            box-sizing: border-box;
+
+        }
+
+        &--content{
+            display: inline-block;
+            font-size: 20px;
+            font-weight: 500;
+            color: rgb(37, 37, 37);
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            padding-right: 30px;
+
+            a{
+                text-decoration: none;
+                color: rgb(37, 37, 37);
+            }
+        }
+    }
+}

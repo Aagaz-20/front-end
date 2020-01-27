@@ -19,13 +19,13 @@ class Registration extends React.Component{
     }
 
     componentDidUpdate(){
-        const { authReducer } = this.props;
+        const { errors } = this.props;
         
-        if( authReducer.error && this.state.error && !this.state.loading ){
-            console.log(authReducer)
+        if( errors.error && this.state.error && !this.state.loading ){
+            console.log(errors)
             store.addNotification({
-                title:  authReducer.error.title,
-                message:  authReducer.error.msg,
+                title:  errors.error.title,
+                message:  errors.error.msg,
                 type: "danger",
                 insert: "bottom",
                 width: 300,
@@ -161,6 +161,7 @@ Registration = connect(
 const mapStateToProps =(state) => {
     return{
         authReducer: state.authReducer,
+        errors: state.errors
         
     }
 }

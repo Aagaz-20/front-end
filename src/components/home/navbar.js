@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import { logoutAction } from '../../actions';
 
 
 class Navbar extends React.Component{
@@ -37,18 +40,21 @@ class Navbar extends React.Component{
                     <Link to ='/pronites' className='link'>
                     <li>Pronites</li>
                     </Link>
-                    <Link to ='/brochure' className='link'>
-                    <li>Brochure</li>
-                    </Link>
+                    <li><a href='https://drive.google.com/file/d/16KEZWjWFAd82XZfYt5dnP-tvN2ITEM-l/view' target='_blank' rel="noopener noreferrer">Brochure</a></li>
                     <Link to ='/sponsers' className='link'>
                     <li>Sponsers</li>
                     </Link>
                     <Link to ='/contactus' className='link'>
                     <li>Contact Us</li>
                     </Link>
-                    <Link to ='/login' className='link'>
-                    <li className='highlight'>Login</li>
-                    </Link>
+                    
+                    { this.props.authReducer && !this.props.authReducer.isLoggedIn && <Link to ='/login' className='link'><li className='highlight'>Login</li> </Link>}
+                    {this.props.authReducer.isLoggedIn && <li className='highlight'>
+                        <i className="fa fa-user"></i> 
+                        {this.props.authReducer.loginData.firstName}
+                        <button className='logout' onClick={() => {this.props.logoutAction()}}>Logout</button>
+                    </li>}
+                    
                     
                 </ul>
             </div>
@@ -56,4 +62,12 @@ class Navbar extends React.Component{
     }
 }
 
-export default Navbar;
+const mapStateToProps = (state) => {
+    return{
+        authReducer: state.authReducer
+    }
+}
+
+const connectProps = connect(mapStateToProps, { logoutAction })(Navbar);
+
+export default connectProps;

@@ -4,7 +4,6 @@ import Timer from '../utils/timer';
 
 import borderImage from '../../images/border-blue.png';
 import boardImage from '../../images/board.png';
-import blobShapeImage from '../../images/blob-shape-blue.svg';
 
 class About extends React.Component{
     render(){

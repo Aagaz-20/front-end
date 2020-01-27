@@ -30,3 +30,49 @@
     }
     
 }
+
+
+@-webkit-keyframes Gradient1 {
+	0% {
+		background-position: 30% 50%
+	}
+	50% {
+		background-position: 25% 50%
+	}
+	100% {
+		background-position: 30% 50%
+	}
+	
+}
+
+@keyframes Gradient1 {
+	0% {
+		background-position: 30% 50%
+	}
+	50% {
+		background-position: 25% 50%
+	}
+	100% {
+		background-position: 30% 50%
+	}
+	
+}
+
+@keyframes popup{
+    0%{
+        // transform: scale(0.1) translate(-50%, -50%);
+        width:0;
+        height: 0;
+    }
+
+    80%{
+        // transform: scale(1.1) translate(-50%, -50%);
+        width: 90%;
+        height: 620px;
+    }
+    100%{
+        // transform: scale(1) translate(-50%, -50%);
+        width: 80%;
+        height: 580px;
+    }
+}

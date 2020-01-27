@@ -11,7 +11,8 @@
         text-align: right;
 
         li{
-            display: inline;
+            position: relative;
+            display: inline-block;
             padding: 10px 20px;
             font-size: 22px;
             font-family: 'Staatliches', cursive;
@@ -20,14 +21,44 @@
             color: black;
             font-weight: 500;
             transition: all 0.5s ease;
+
             &.highlight{
                 background-color: rgb(47, 255, 158);
-                &:hover{
-                    letter-spacing: 0.5px;
-                }
+                
             }
             &:hover{
                 background-color: rgb(47, 255, 158);
+            }
+
+            a{
+                text-decoration: none;
+                color: black;
+            }
+
+            i{
+                margin-right: 10px;
+                display: inline-block;
+            }
+
+            button.logout{
+                display: none;
+            }
+
+            &:hover{
+                button.logout{
+                    display: block;
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(-50%);
+                    top:48px;
+                    background-color: rgb(255, 30, 68);
+                    border: none;
+                    outline: none;
+                    padding: 10px 46px;
+                    font-size: 22px;
+                    font-family: 'Staatliches', cursive;
+                    cursor: pointer;
+                }
             }
         }
 

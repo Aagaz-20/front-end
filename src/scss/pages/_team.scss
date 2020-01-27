@@ -1,0 +1,229 @@
+.page-team{
+    width: 100%;
+    height: 1500px;
+    background-color: rgb(255, 214, 29);
+    position: relative;
+
+    .page-heading{
+        font-size: 90px;
+        font-family: 'Pacifico', cursive;
+        position: absolute;
+        left: 50%;
+        top: 13%;
+        transform: translateX(-50%);
+        color: white;
+    }
+
+    .page-content{
+        width: 80%;
+        height: 80%;
+        font-size: 32px;
+        font-family: 'Nunito', sans-serif;
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translateX(-50%);
+        text-align: center;
+        color: white;
+
+        img.blob-image{
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+        }
+
+        .team-content{
+            position: absolute;
+            top: 30%;
+            left: 55%;
+            transform: translateX(-50%);
+            width: 100%;
+
+            .team-department{
+                display: block;
+                height: auto;
+                margin-top: 10px;
+
+                &:nth-child(1){
+                    .department-members{
+                        .team-tile{
+                            margin: 150px;
+                            width: 42%;
+                            height: 250px;
+
+                            .designation{
+                                bottom: 120px;
+                                right: -55px;
+                                letter-spacing: 5px;
+                            }
+                        }
+                    }
+                }
+
+                &:nth-child(9){
+                    .department-members{
+                        .team-tile{
+                            margin: 140px;
+                            margin-top: 70px;
+                            width: 42%;
+                            height: 250px;
+
+                            .designation{
+                                bottom: 70px;
+                                right: -10px;
+                                letter-spacing: 5px;
+                            }
+                        }
+                    }
+                }
+
+                &:nth-child(3),
+                &:nth-child(4),
+                &:nth-child(6),
+                &:nth-child(8),
+                &:nth-child(11),
+                &:nth-child(12),
+                &:nth-child(14){
+                    .department-members{
+                        .team-tile{
+                            transform: scale(1.1);
+                            margin-top: 120px;
+                            margin-right: 110px;
+
+                            &--name{
+                                transform: scale(0.9);
+                            }
+                        }
+                    }
+                }
+
+                .department-members{
+                    margin: 0 auto;
+                    width: 70%;
+
+                    .team-tile{
+                        width: 35%;
+                        height: 200px;
+                        background-color: white;
+                        display: block;
+                        float: left;
+                        margin-right: 80px;
+                        margin-bottom: 80px;
+                        box-sizing: border-box;
+                        text-align: center;
+                        align-items: center;
+                        position: relative;
+                        // margin: 0 auto;
+                        // padding-right: 50px;
+                        overflow: hidden;
+                        border: none;
+                        transition: all 0.3 ease;
+
+                        &:hover{
+
+                            img.member-image{
+                                filter: grayscale(0%);
+                            }
+
+                            .circle{
+                            transform: scale(12) translateX(0px) translateY(-3px);
+                            }
+                        }
+
+                        &:nth-child(1){
+                            .circle{
+                                background-color: rgba(162, 0, 255, 0.63);
+                            }
+                        }
+                        &:nth-child(2){
+                            .circle{
+                                background-color: rgba(255, 145, 0, 0.616);
+                            }
+                        }
+                        &:nth-child(3){
+                            .circle{
+                                background-color: rgba(47, 255, 127, 0.63);
+                            }
+                        }
+
+                        img.member-image{
+                            height: 100%;
+                            float: left;
+                            filter: grayscale(100%);
+                            transition: all 0.3 ease;
+                        }
+
+                        &--name{
+                            color: white;
+                            position: absolute;
+                            bottom: 3px;
+                            right: 70px;
+                            font-size: 33px;
+                            font-weight: 600;
+                            font-family: 'Staatliches', cursive;
+                            z-index: 100;
+                        }
+
+                        .circle{
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 50%;
+                            // background-color: rgba(180, 0, 180, 0.651);
+                            background-color: rgb(random(255),random(255),random(255));
+                            position: absolute;
+                            bottom: 10px;
+                            right: 5%;
+                            transition: all 0.3s ease;
+
+                            
+                        }
+
+                        .designation{
+                            color: rgb(37,37,37);
+                            transform: rotateZ(-90deg);
+                            position: absolute;
+                            right: -22px;
+                            bottom: 80px;
+                            font-family: 'Staatliches', cursive;
+                            font-size: 34px;
+                            letter-spacing: 8px;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+.swiper-container{
+    height: 600px;
+}
+
+.swiper-wrapper{
+    height: 600px;
+}
+
+.swiper-pagination-bullet{
+    display: block;
+    width: 200px;
+    font-size: 14px;
+    height: 20px;
+    background-color: transparent;
+    color: black;
+    font-family: 'Staatliches', cursive;
+    letter-spacing: 0.2px;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+
+    &.swiper-pagination-bullet-active{
+        color: black;
+        background-color: transparent;
+        opacity: 1;
+        text-decoration: underline;
+        transform: scale(1.3);
+        padding: 20px 0px;
+    }
+}

@@ -1,15 +1,15 @@
 export const authReducer = (state={}, action) => {
     switch(action.type){
         case 'REGISTER': 
-            return state = {registered : true, msg : action.payload};
+            return state = {...this,registered : true, msg : action.payload};
         case 'LOGIN':
-            return state = {loginData: action.payload};
+            return state = {...this,loginData: action.payload, isLoggedIn: true};
+        case 'LOGOUT':
+            return state = {...this,msg: action.payload.msg, isLoggedIn: false}
         case 'FORGOTPASSWORD':
-            return state = {forgotPassword: action.payload};
+            return state = {...this,forgotPassword: action.payload};
         case 'RESETPASSWORD':
-            return state = {resetPassword: action.payload};
-        case 'ERROR':
-            return state = {error: action.payload}
+            return state = {...this,resetPassword: action.payload};
         default:
             return state;
     }
