@@ -9,7 +9,7 @@ class Navbar extends React.Component{
     state ={
         path: null,
         location: window.location.pathname,
-        top: 100, 
+        top: 200, 
         class: null
     }
 
@@ -35,10 +35,10 @@ class Navbar extends React.Component{
     }
 
     navDrawer = () => {
-        if(this.state.top === 100){
+        if(this.state.top === 200){
         this.setState({ top: 0, class: 'active'})
         }else{
-            this.setState({ top: 100, class: null})
+            this.setState({ top: 200, class: null})
         }
     }
 

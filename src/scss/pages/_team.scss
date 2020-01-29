@@ -52,6 +52,10 @@
                 width: 400%;
                 top: 50px;
             }
+
+            @media only screen and (max-width: 400px){
+                top: 100px;
+            }
         }
 
         .team-content{
@@ -90,10 +94,22 @@
                                 margin-top: 40px;
                             }
 
+                            @media only screen and (max-width: 390px){
+                                margin-left: -30%;
+                                // width: 280px;
+                                // height: 220px;
+                            }
+
                             .designation{
                                 bottom: 120px;
                                 right: -55px;
                                 letter-spacing: 5px;
+                            }
+
+                            &--name{
+                                @media only screen and (max-width: 390px){
+                                    right: 70px;
+                                }
                             }
                         }
                     }
@@ -115,10 +131,24 @@
                                 margin-top: 40px;
                             }
 
+                            @media only screen and (max-width: 390px){
+                                margin-left: -30%;
+                                // width: 280px;
+                                // height: 220px;
+                            }
+
                             .designation{
                                 bottom: 70px;
                                 right: -10px;
                                 letter-spacing: 5px;
+
+                                
+                            }
+
+                            &--name{
+                                @media only screen and (max-width: 390px){
+                                    right: 70px;
+                                }
                             }
                         }
                     }
@@ -140,6 +170,11 @@
                             @media only screen and (max-width: 600px){
                                 margin: 0 auto;
                                 margin-bottom: 100px;
+                            }
+
+                            @media only screen and (max-width: 390px){
+                                width: 230px;
+                                height: 180px;
                             }
 
                             &--name{
@@ -180,6 +215,11 @@
                             margin: 0 auto;
                             margin-bottom: 20px;
                             float: unset;
+                        }
+
+                        @media only screen and (max-width: 390px){
+                            width: 240px;
+                            height: 190px;
                         }
 
                         &:hover{
@@ -231,6 +271,11 @@
                             font-weight: 600;
                             font-family: 'Staatliches', cursive;
                             z-index: 100;
+
+                            @media only screen and (max-width: 600px){
+                                font-size: 7vw;
+                                right: 55px;
+                            }
                         }
 
                         .circle{
@@ -297,7 +342,7 @@
     height: 650px;
 
     @media only screen and (max-width: 600px){
-        height: 140vh !important;
+        height: 1180px !important;
         width: 100% !important;
         text-align: center;
     }
@@ -306,7 +351,7 @@
         height: 650px;
     
         @media only screen and (max-width: 600px){
-            height: 70vh !important;
+            height: 580px !important;
             top: 250px;
         }
     }
@@ -319,8 +364,13 @@
         width: 100% !important;
         text-align: center !important;
         top: 100px !important;
+        right: 0 !important;
         // z-index: 100000 !important;
         background-color: rgb(255, 214, 29);
+    }
+
+    @media only screen and (max-width: 390px){
+        top: 120px !important;
     }
 }
 
@@ -345,6 +395,10 @@
         margin: 0 !important;
         outline: none;
         border: none;
+    }
+
+    @media only screen and (max-width: 380px){
+        margin-top: -10px !important;
     }
 
     &.swiper-pagination-bullet-active{
