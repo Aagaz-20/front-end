@@ -8,13 +8,32 @@
     position: absolute;
     top: 200px;
     right:34%;
-    transform: rotate3D(0, 0,-1, 0deg);
+	transform: rotate3D(0, 0,-1, 0deg);
+
+	@media only screen and (max-width: 1300px){
+		top: 170px;
+		right: 36%;
+		width: 180px;
+	}
+	
+	@media only screen and (max-width: 600px){
+		position: relative;
+		top: 0;
+		right: 0;
+		margin: 0 auto;
+		transform: rotate3d(0, 0 ,0 , 0deg);
+	}
 
     .time-title{
         position: absolute;
         left: 50%;
         top:-30px;
-        transform: translateX(-50%);
+		transform: translateX(-50%);
+		font-family: 'Staatliches', cursive;
+
+		@media only screen and (max-width: 600px){
+
+		}
     }
 }
 
@@ -31,21 +50,51 @@
     
     &:nth-child(1){
         height: 55px;
-        transform: translateY(25px) skewY(-6deg);
+		transform: translateY(25px) skewY(-6deg);
+		
+		@media only screen and (max-width: 1300px){
+			width: 30px;
+			height: 50px;
+		}
     }
     &:nth-child(2){
         height: 57px;
-        transform: translateY(17px) skewY(-6deg);
+		transform: translateY(17px) skewY(-6deg);
+		@media only screen and (max-width: 1300px){
+			width: 30px;
+			height: 52px;
+		}
     }
 
     &:nth-child(3){
         height: 59px;
-        transform: translateY(9px) skewY(-6deg);
+		transform: translateY(9px) skewY(-6deg);
+		@media only screen and (max-width: 1300px){
+			width: 30px;
+			height: 54px;
+		}
     }
 
     &:nth-child(4){
-        transform: skewY(-6deg);
-    }
+		transform: skewY(-6deg);
+		@media only screen and (max-width: 1300px){
+			width: 30px;
+			height: 56px;
+		}
+	}
+	
+	@media only screen and (max-width: 600px){
+		transform: none;
+
+		&:nth-child(1),
+		&:nth-child(2),
+		&:nth-child(3),
+		&:nth-child(4){
+			transform: none;
+		}
+	}
+
+	
 
     
 }
@@ -58,6 +107,8 @@
 	height: 50%;
 	overflow: hidden;
 	border: 1px solid whitesmoke;
+
+	
 }
 
 .upperCard span, .lowerCard span {
@@ -65,6 +116,10 @@
 	font-family: "Droid Sans Mono", monospace;
 	font-weight: lighter;
 	color: #333333;
+
+	@media only screen and (max-width: 1300px){
+		font-size: 1.7em;
+	}
 }
 
 .upperCard {
@@ -105,6 +160,9 @@
 	font-size: 2em;
 	font-weight: lighter;
 	color: #333333;
+	@media only screen and (max-width: 1300px){
+		font-size: 1.7em;
+	}
 }
 
 .flipCard.unfold {

@@ -14,6 +14,8 @@ export const errorsReducer = (state={}, action) => {
             return state = {...this};
         case 'EVENTREGISTRATION':
             return state = {...this};
+        case 'EMAILVERIFY':
+            return state = {...this}
         default:
             return state;
     }

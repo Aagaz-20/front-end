@@ -35,6 +35,11 @@
         box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.37);
         text-align: center;
 
+        @media only screen and (max-width: 600px){
+            height: 80%;
+            width: 90%;
+        }
+
         .close-button{
             font-size: 22px;
             font-family: 'Staatliches', cursive;
@@ -58,6 +63,12 @@
             font-weight: 600;
             color: white;
             letter-spacing: 5px;
+
+            @media only screen and (max-width: 600px){
+                font-size: 10vw;
+                letter-spacing: 2px;
+                padding-bottom: 30px;
+            }
         }
 
         &-navbar{
@@ -72,6 +83,12 @@
                 font-family: 'Staatliches', cursive;
                 color: white;
                 cursor: pointer;
+                @media only screen and (max-width: 600px){
+                    padding: 5px;
+                    margin: 0px 20px;
+                    // display: block;
+                    font-size: 6vw;
+                }
 
                 &.active{
                     text-decoration: underline;
@@ -86,6 +103,19 @@
             margin: 0 auto;
             text-align: left;
             margin-top: 30px;
+
+            @media only screen and (max-width: 600px){
+                width: 80%;
+                height: 50%;
+                overflow-y: scroll;
+                padding-left: 20px;
+                // margin-top: 50px;
+
+            }
+
+            @media only screen and (max-width: 350px){
+                height: 40%;
+            }
             
             ul{
                 li{
@@ -94,6 +124,10 @@
                     padding-bottom: 5px;
                     letter-spacing: 0.5px;
                     word-spacing: 2px;
+
+                    @media only screen and (max-width: 600px){
+                        font-size: 3.5vw;
+                    }
                 }
             }
 
@@ -109,6 +143,15 @@
                 left: 50%;
                 top: 50%;
                 transform: translate(-50%, 0);
+
+                @media only screen and (max-width: 600px){
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    transform: none;
+                    text-align: center;
+                    margin-top: 20px;
+                }
 
             }
         }
@@ -126,6 +169,12 @@
             left: 50%;
             top: 50%;
             transform: translate(-50%, 0);
+
+            @media only screen and (max-width: 600px){
+                top: 0;
+                margin-top: 10px;
+                font-size: 5vw;
+            }
 
             .contact-name{
                 display: block;
@@ -146,6 +195,13 @@
             overflow-y: scroll;
             text-align: center;
 
+            @media only screen and (max-width: 600px){
+                width: 100%;
+                height: auto;
+                overflow-y: visible;
+                overflow-x: hidden;
+            }
+
             &.login{
                 overflow: hidden;
 
@@ -157,6 +213,10 @@
                     letter-spacing: 0.5px;
                     word-spacing: 2px;
                     display: block;
+
+                    @media only screen and (max-width: 600px){
+                        font-size: 4vw;
+                    }
                 }
             }
 
@@ -186,7 +246,7 @@
             }
 
             .input-field{
-                width: 90%;
+                width: 97%;
                 height: 60px;
                 text-align: left;
                 margin: 0 auto;
@@ -195,6 +255,10 @@
                 transition: all 0.2s ease;
                 margin-top: 1rem;
                 transition: all 0.5 ease;
+
+                @media only screen and (max-width: 600px){
+                    height: 60px;
+                }
     
     
                 &--label{
@@ -231,6 +295,10 @@
                     background: transparent;
                     font-family: 'Nunito', sans-serif;
                     box-sizing: border-box;
+
+                    @media only screen and (max-width: 600px){
+                        height: 2.7rem;
+                    }
     
                     &.touched{
                         border: 0.2rem solid rgb(4, 255, 180);
@@ -265,6 +333,11 @@
                 margin: 1em 0.8em;
                 transition: all 0.5s ease;
                 border: 1px solid rgba(255, 255, 255, 0.233);
+
+                @media only screen and (max-width: 600px){
+                    width: 90%;
+                    font-size: 5vw;
+                }
 
                 &:hover{
                     letter-spacing: 2px;

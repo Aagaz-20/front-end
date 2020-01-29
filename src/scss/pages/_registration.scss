@@ -11,12 +11,21 @@
         left: 50%;
         transform: translate(-50%, -50%);
 
+        @media only screen and (max-width: 600px){
+            width: 90%;
+        }
+
         img{
             height: 100%;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+
+            @media only screen and (max-width: 600px){
+                height: auto;
+                width: 200%;
+            }
         }
 
         .form-container{
@@ -28,11 +37,27 @@
             transform: translate(-50%, -60%);
             text-align: center;
 
+            @media only screen and (max-width: 600px){
+                width: 100%;
+            }
+
             .form-title{
                 font-size: 80px;
                 font-family: 'Pacifico', cursive;
                 margin-bottom: 50px;
                 color: rgb(13, 1, 77);
+
+                @media only screen and (max-width: 600px){
+                    // position: absolute;
+                    // top: -30%;
+                    // left: 50%;
+                    // transform: translateX(-50%);
+                    margin: 0 auto;
+                    text-align: center;
+                    font-size: 10vw;
+                    display: block;
+                    // margin-top: -50%;
+                }
             }
 
             form{
@@ -41,6 +66,9 @@
                 overflow: hidden;
                 overflow-y: scroll;
                 transition: all 0.5 ease;
+                @media only screen and (max-width: 600px){
+                    margin-top: 60px;
+                }
 
                 &::-webkit-scrollbar {
                     width: 2px;

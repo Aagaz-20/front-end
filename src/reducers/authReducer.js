@@ -1,7 +1,7 @@
 export const authReducer = (state={}, action) => {
     switch(action.type){
         case 'REGISTER': 
-            return state = {...this,registered : true, msg : action.payload};
+            return state = {...this,isRegistered : true, data:action.payload};
         case 'LOGIN':
             return state = {...this,loginData: action.payload, isLoggedIn: true};
         case 'LOGOUT':

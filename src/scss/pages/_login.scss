@@ -2,6 +2,9 @@
     height: 670px;
     background: rgb(255, 115, 0);
     position: relative;
+    @media only screen and (max-width: 600px){
+        height: 100vh;
+    }
 
     .form-wrapper{
         width: 80%;
@@ -17,6 +20,11 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            @media only screen and (max-width: 600px){
+                height: auto;
+                width: 140%;
+                top: 60%;
+            }
         }
 
         .form-container{
@@ -27,17 +35,35 @@
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
+            @media only screen and (max-width: 600px){
+                width: 100%;
+            }
 
             .form-title{
                 font-size: 80px;
                 font-family: 'Pacifico', cursive;
                 margin-bottom: 50px;
                 color: rgb(255, 188, 5);
-                letter-spacing: 2px;;
+                letter-spacing: 2px;
+
+                @media only screen and (max-width: 600px){
+                    // position: absolute;
+                    // top: -30%;
+                    // left: 50%;
+                    // transform: translateX(-50%);
+                    margin: 0 auto;
+                    text-align: center;
+                    font-size: 12vw;
+                    display: block;
+                    // margin-top: -50%;
+                }
             }
 
             form{
                 margin-top: 40px;
+                @media only screen and (max-width: 600px){
+                    margin-top: 100px;
+                }
             }
 
             .input-field{

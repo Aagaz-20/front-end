@@ -3,6 +3,10 @@
     height: 700px;
     background-color: rgb(255, 0, 119);
     position: relative;
+    
+    @media only screen and (max-width: 600px){
+        height: 100vh;
+    }
 
     .page-heading{
         font-size: 90px;
@@ -12,6 +16,17 @@
         top: 25%;
         transform: translateX(-50%);
         color: white;
+
+        @media only screen and (max-width: 600px){
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: none;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 12vw;
+            padding-top: 100px;
+        }
     }
 
     .page-content{
@@ -23,5 +38,13 @@
         transform: translateX(-50%);
         text-align: center;
         color: white;
+
+        @media only screen and (max-width: 600px){
+            position: relative;
+            top: 0;
+            margin-top: 70px;
+            font-size: 7vw;
+            padding: 20px;
+        }
     }
 }

@@ -9,6 +9,10 @@
 		font-size: 28px;
 		color: $textColor;
 
+		@media only screen and (max-width: 600px){
+			letter-spacing: 0.2em;
+		}
+
 		&::after,
 		&::before {
 			content: "";
@@ -18,16 +22,26 @@
 			transform: skewX(30deg);
 			transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 			z-index: -2;
+
+			@media only screen and (max-width: 600px){
+				transform: skew(0deg);
+			}
 		}
 		&::before {
 			background-color: $colorLeft;
 			top: -1rem;
 			left: 0rem;
+			@media only screen and (max-width: 600px){
+				top: 0;
+			}
 		}
 		&::after {
 			background-color: $colorRight;
 			top: 1rem;
 			left: 7rem;
+			@media only screen and (max-width: 600px){
+				top: 0;
+			}
 		}
 		&:hover {
 			&::before,

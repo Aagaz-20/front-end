@@ -92,7 +92,7 @@ class Registration extends React.Component{
     }
 
     render(){
-        if(this.props.authReducer.registered){
+        if(this.props.authReducer.isRegistered){
             store.addNotification({
                 title:  'Success',
                 message:  'Registered Successfully',
@@ -107,7 +107,7 @@ class Registration extends React.Component{
                 onScreen: true
                 }
             });
-            return <Redirect to='/' />
+            return <Redirect to='/registersuccess' />
         }
         return(
             <div className='page-wrapper registration'>
@@ -125,7 +125,7 @@ class Registration extends React.Component{
                             <Field name='gender' label='gender' optionOne='male' optionTwo='female' component={this.renderRadioButton} />
                             <Field name='college' label='college' optionOne='HBTU' optionTwo='other' component={this.renderRadioButton} />
                             {this.props.collegeValue === 'other' && <Field name='collegeName' type='text' component={this.renderField} label='College Name' />}
-                            {this.props.collegeValue === 'other' && <Field name='accomodation' label='accomodation' optionOne='yes' optionTwo='no' component={this.renderRadioButton} />}
+                            {this.props.collegeValue === 'other' && <Field name='accommodation' label='accommodation' optionOne='yes' optionTwo='no' component={this.renderRadioButton} />}
                             <div className='form-button'>
                                 <button className="button type1" >
                                     Register

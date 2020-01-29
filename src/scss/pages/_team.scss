@@ -4,6 +4,10 @@
     background-color: rgb(255, 214, 29);
     position: relative;
 
+    @media only screen and (max-width: 600px){
+        height: 1600px;
+    }
+
     .page-heading{
         font-size: 90px;
         font-family: 'Pacifico', cursive;
@@ -12,6 +16,17 @@
         top: 13%;
         transform: translateX(-50%);
         color: white;
+
+        @media only screen and (max-width: 600px){
+            position: relative;
+            top: 0;
+            left: 0;
+            transform: none;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 12vw;
+            padding-top: 100px;
+        }
     }
 
     .page-content{
@@ -32,6 +47,11 @@
             left: 50%;
             transform: translateX(-50%);
             width: 120%;
+
+            @media only screen and (max-width: 600px){
+                width: 400%;
+                top: 50px;
+            }
         }
 
         .team-content{
@@ -40,6 +60,15 @@
             left: 55%;
             transform: translateX(-50%);
             width: 100%;
+
+            @media only screen and (max-width: 600px){
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;
+                margin: 0 auto;
+                margin-top: 100px;
+            }
 
             .team-department{
                 display: block;
@@ -52,6 +81,14 @@
                             margin: 150px;
                             width: 42%;
                             height: 250px;
+
+                            @media only screen and (max-width: 600px){
+                                width: 300px;
+                                margin: 0 auto;
+                                height: 240px;
+                                margin-left: -10%;
+                                margin-top: 40px;
+                            }
 
                             .designation{
                                 bottom: 120px;
@@ -69,6 +106,14 @@
                             margin-top: 70px;
                             width: 42%;
                             height: 250px;
+
+                            @media only screen and (max-width: 600px){
+                                width: 300px;
+                                margin: 0 auto;
+                                height: 240px;
+                                margin-left: -10%;
+                                margin-top: 40px;
+                            }
 
                             .designation{
                                 bottom: 70px;
@@ -92,6 +137,11 @@
                             margin-top: 120px;
                             margin-right: 110px;
 
+                            @media only screen and (max-width: 600px){
+                                margin: 0 auto;
+                                margin-bottom: 100px;
+                            }
+
                             &--name{
                                 transform: scale(0.9);
                             }
@@ -102,6 +152,10 @@
                 .department-members{
                     margin: 0 auto;
                     width: 70%;
+
+                    @media only screen and (max-width: 600px){
+                        width: 70%;
+                    }
 
                     .team-tile{
                         width: 35%;
@@ -121,6 +175,13 @@
                         border: none;
                         transition: all 0.3 ease;
 
+                        @media only screen and (max-width: 600px){
+                            width: 250px;
+                            margin: 0 auto;
+                            margin-bottom: 20px;
+                            float: unset;
+                        }
+
                         &:hover{
 
                             img.member-image{
@@ -128,7 +189,13 @@
                             }
 
                             .circle{
-                            transform: scale(12) translateX(0px) translateY(-3px);
+                            transform: scale(11) translateX(0px) translateY(0px);
+                            }
+
+                            .contact{
+                                a{
+                                    opacity: 1;
+                                }
                             }
                         }
 
@@ -190,6 +257,34 @@
                             font-size: 34px;
                             letter-spacing: 8px;
                         }
+
+                        .contact{
+                            position: absolute;
+                            bottom: 40px;
+                            right: 75px;
+                            color: white;
+                            transition: all 0.3s ease;
+                            
+                            a{
+                                color: white;
+                                display: block;
+                                font-size: 24px;
+                                text-decoration: none;
+                                text-align: right;
+                                padding-bottom: 10px;
+                                font-weight: 600;
+                                letter-spacing: 2px;
+                                opacity: 0;
+                                transition: all 0.3s ease;
+                                transition-delay: 0.2s;
+
+                                &:nth-child(2){
+                                    font-family: 'Staatliches', cursive;
+                                    font-size: 20px;
+                                    transition-delay: 0.1s;
+                                }
+                            }
+                        }
                         
                     }
                 }
@@ -199,11 +294,32 @@
 }
 
 .swiper-container{
-    height: 600px;
+    height: 650px;
+
+    @media only screen and (max-width: 600px){
+        height: 140vh !important;
+        width: 100% !important;
+        text-align: center;
+    }
 }
 
 .swiper-wrapper{
-    height: 600px;
+    height: 650px;
+
+    @media only screen and (max-width: 600px){
+        height: 70vh !important;
+        top: 250px;
+    }
+}
+
+.swiper-pagination{
+    @media only screen and (max-width: 600px){
+        width: 100% !important;
+        text-align: center !important;
+        top: 100px !important;
+        // z-index: 100000 !important;
+        background-color: rgb(255, 214, 29);
+    }
 }
 
 .swiper-pagination-bullet{
@@ -218,6 +334,17 @@
     opacity: 0.6;
     transition: all 0.3s ease;
 
+    @media only screen and (max-width: 600px){
+        display: inline-block !important;
+        // float: left;
+        width: auto;
+        font-size: 4vw;
+        padding: 0px 8px;
+        margin: 0 !important;
+        outline: none;
+        border: none;
+    }
+
     &.swiper-pagination-bullet-active{
         color: black;
         background-color: transparent;
@@ -225,5 +352,10 @@
         text-decoration: underline;
         transform: scale(1.3);
         padding: 20px 0px;
+
+        @media only screen and (max-width: 600px){
+            transform: none;
+            padding: 0px 8px;
+        }
     }
 }

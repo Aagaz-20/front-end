@@ -39,7 +39,7 @@ class Main extends React.Component{
                             <text className='section-main--wrapper-title-primary' textAnchor="middle" x="50%" y="50%" dy=".35em">
                             AAGAZ 
                             </text>
-                            <text className='section-main--wrapper-title-secondary' textAnchor="middle" x="75%" y="70%" dy=".35em">
+                            <text className='section-main--wrapper-title-secondary' textAnchor="middle" x={window.innerWidth < 500 ? "87%" : "75%"} y={window.innerWidth < 500 ? "80%" :"70%"} dy=".35em">
                             2020
                             </text>
                         </symbol>

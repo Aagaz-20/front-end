@@ -12,6 +12,10 @@
   stroke-dashoffset: 0;
   -webkit-animation: stroke $time infinite linear;
   animation: stroke $time infinite linear;
+
+  @media only screen and (max-width: 600px){
+    stroke-width: 10;
+  }
   
   @for $item from 1 through $max {
     &:nth-child(#{$max}n + #{$item}) {
@@ -32,6 +36,65 @@
 @keyframes stroke {
   100% {
     stroke-dashoffset: -($dash + $dash-gap) * $max;
+  }
+}
+
+.popup{
+  position: absolute;
+  z-index: 110;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &::-webkit-scrollbar {
+      width: 1px;
+    }
+
+    &::-webkit-scrollbar:hover {
+      width: 4px;
+    }
+  
+    
+    /* Track */
+  &::-webkit-scrollbar-track {
+      background: #426792; 
+    }
+     
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #0c0038; 
+    }
+    
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555; 
+      width: 10px;
+  }
+
+  iframe{
+      width: 150%;
+      height: 500px;
+      border: rgb(0, 255, 136) solid 2px;
+
+      
+  }
+
+  button{
+      position: absolute;
+      bottom: 5%;
+      left: 66%;
+      transform: translateX(-40%);
+      width: 194px;
+      height: 40px;
+      background-color: rgb(210,73,104);
+      color: white;
+      border: none;
+      outline: none;
+      font-family: 'Nunito', sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      border-radius: 3px;
+      cursor: pointer;
   }
 }
 

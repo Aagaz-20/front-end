@@ -4,7 +4,15 @@ import 'swiper/css/swiper.css';
 
 
 import borderImage from '../../images/border-green.png';
-import Image from '../../images/eventsImages/athletics-men.jpg';
+import gallery1 from '../../images/gallery/gallery1.jpg';
+import gallery2 from '../../images/gallery/gallery2.jpg';
+import gallery3 from '../../images/gallery/gallery3.jpg';
+import gallery4 from '../../images/gallery/gallery4.jpg';
+import gallery5 from '../../images/gallery/gallery5.jpg';
+import gallery6 from '../../images/gallery/gallery6.jpg';
+import gallery7 from '../../images/gallery/gallery7.jpg';
+import gallery8 from '../../images/gallery/gallery8.jpg';
+import gallery9 from '../../images/gallery/gallery9.jpg';
 
 class Gallery extends React.Component{
     params = {
@@ -21,7 +29,7 @@ class Gallery extends React.Component{
         effect: 'coverflow',
         grabCursor: true,
         centeredSlides: true,
-        slidesPerView: 2.3,
+        slidesPerView: window.innerWidth < 600 ? 1.3 : 2.3,
         spaceBetween: 0,
         speed: 600,
         loop: true,
@@ -60,22 +68,34 @@ class Gallery extends React.Component{
                 </div>
                 <div className='section-content'>
                     <div className='border'>
-                        <div class = "inner-cutout1">
-                            <Swiper {...this.params}>
+                        <div className = "inner-cutout1">
+                            <Swiper {...this.params} style={window.innerWidth < 600 ? {height: '200px'}: {}}>
                                 <div className='slide'>
-                                <img className='swiper-image' src={Image} alt='Gallery' />
+                                <img className='swiper-image' src={gallery2} alt='Gallery' />
                                 </div>
                                 <div className='slide'>
-                                <img className='swiper-image' src={Image} alt='Gallery' />
+                                <img className='swiper-image' src={gallery1} alt='Gallery' />
                                 </div>
                                 <div className='slide'>
-                                <img className='swiper-image' src={Image} alt='Gallery' />
+                                <img className='swiper-image' src={gallery3} alt='Gallery' />
                                 </div>
                                 <div className='slide'>
-                                <img className='swiper-image' src={Image} alt='Gallery' />
+                                <img className='swiper-image' src={gallery4} alt='Gallery' />
                                 </div>
                                 <div className='slide'>
-                                <img className='swiper-image' src={Image} alt='Gallery' />
+                                <img className='swiper-image' src={gallery5} alt='Gallery' />
+                                </div>
+                                <div className='slide'>
+                                <img className='swiper-image' src={gallery6} alt='Gallery' />
+                                </div>
+                                <div className='slide'>
+                                <img className='swiper-image' src={gallery7} alt='Gallery' />
+                                </div>
+                                <div className='slide'>
+                                <img className='swiper-image' src={gallery8} alt='Gallery' />
+                                </div>
+                                <div className='slide'>
+                                <img className='swiper-image' src={gallery9} alt='Gallery' />
                                 </div>
                             </Swiper>
                         </div>

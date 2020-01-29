@@ -12,6 +12,7 @@ class About extends React.Component{
                 <div className='border-image'>
                     <img src={borderImage} alt='Blue' />
                 </div>
+                <div className='section-about--container'>
                 <div className='section-heading'>
                     <div className = "inner-cutout"> 
 			            <h1 className="knockout">About Us</h1>
@@ -37,7 +38,13 @@ class About extends React.Component{
                 </div>
                 <div className='timer-board'>
                     <img src={boardImage} alt='Scoreboard' />
+                    <span className='time-left'>Time <span className='time-left-to'>to</span> <span className='time-left-go'>go</span> :</span>
                     <Timer />
+                </div>
+                {window.innerWidth< 600 && <div className='timer-display'>
+                    <span className='time-left'>Time <span className='time-left-to'>to</span> <span className='time-left-go'>go</span> :</span>
+                    <Timer />  
+                </div>}
                 </div>
             </div>
         )

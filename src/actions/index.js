@@ -6,15 +6,16 @@ export const registerAction = formValues => async dispatch => {
         const response = await axios.post('http://localhost:3001/register', data);
         dispatch({
             type: 'REGISTER',
-            payload: response.data.msg
+            payload: response.data.data
         })
         return true;
     }
     catch(err){
+        if(err.response){
         dispatch({
             type: 'ERROR',
             payload: {title: err.response.statusText , msg: err.response.data.msg}
-        })
+        })}
         return true;
     }
 
@@ -33,10 +34,11 @@ export const loginAction = formValues => async dispatch => {
         return true;
     }
     catch(err){
+        if(err.response){
         dispatch({
             type: 'ERROR',
             payload: {title: err.response.statusText , msg: err.response.data.msg}
-        })
+        })}
 
         return true;
     }
@@ -56,10 +58,12 @@ export const loginDataAction = (token) => async dispatch => {
 
     }
     catch(err){
+        if(err.response){
         dispatch({
             type: 'ERROR',
             payload: {title: err.response.statusText , msg: err.response.data.msg}
         })
+        }
     }
 }
 
@@ -83,11 +87,12 @@ export const forgotPasswordAction = formValues => async dispatch => {
         return true;
     }
     catch(err){
+        if(err.response){
         dispatch({
             type: 'ERROR',
             payload: {title: err.response.statusText , msg: err.response.data.msg}
         })
-
+        }  
         return true;
     }
 }
@@ -103,10 +108,11 @@ export const resetPasswordAction = formValues => async dispatch => {
         return true;
     }
     catch(err){
+        if(err.response){
         dispatch({
             type: 'ERROR',
             payload: {title: err.response.statusText , msg: err.response.data.msg}
-        })
+        })}
         return true;
     }
 }
@@ -124,6 +130,7 @@ export const eventRegistrationAction = (formValues, eventName) =>  async dispatc
                 'Authorization': `Bearer ${token}`
             }
         });
+        console.log(response)
         dispatch({
             type: 'EVENTREGISTRATION',
             payload: response.data.msg
@@ -131,10 +138,30 @@ export const eventRegistrationAction = (formValues, eventName) =>  async dispatc
         return true;
     }
     catch(err){
+        if(err.response){
         dispatch({
             type: 'ERROR',
             payload: {title: err.response.statusText , msg: err.response.data.msg}
+        })}
+        return true;
+    }
+}
+
+export const emailVerifyAction = (token) => async dispatch => {
+    try{
+        const response = await axios.get(`http://localhost:3001/verification/${token}`)
+
+        dispatch({
+            type: 'EMAILVERIFY',
+            payload: response.data.msg
         })
+    }
+    catch(err){
+        if(err.response){
+        dispatch({
+            type: 'ERROR',
+            payload: {title: err.response.statusText , msg: err.response.data.msg}
+        })}
         return true;
     }
 }

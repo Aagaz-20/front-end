@@ -8,7 +8,9 @@ import { logoutAction } from '../../actions';
 class Navbar extends React.Component{
     state ={
         path: null,
-        location: window.location.pathname
+        location: window.location.pathname,
+        top: 100, 
+        class: null
     }
 
     componentDidMount(){
@@ -25,11 +27,31 @@ class Navbar extends React.Component{
 
     navClick = () => {
         this.setState({ path: window.location.pathname.split('/')[1] })
+        if(this.state.top === 100){
+            this.setState({ top: 0, class: 'active'})
+            }else{
+                this.setState({ top: 100, class: null})
+            }
+    }
+
+    navDrawer = () => {
+        if(this.state.top === 100){
+        this.setState({ top: 0, class: 'active'})
+        }else{
+            this.setState({ top: 100, class: null})
+        }
     }
 
     render(){
         return(
-            <div className='navbar-container'>
+            <>
+            {window.innerWidth < 550 && <div className={`nav-button ${this.state.class}`} onClick={this.navDrawer}>
+                <div className='lines'></div>
+                <div className='lines'></div>
+                <div className='lines'></div>
+            </div>}
+
+            <div className='navbar-container' style = {window.innerWidth < 550 ? {top: `-${this.state.top }vh`}: {}}>
                 <ul className ={this.state.path} onClick={this.navClick}>
                     <Link to ='/accommodation' className='link'>
                     <li>Accommodation</li>
@@ -58,6 +80,7 @@ class Navbar extends React.Component{
                     
                 </ul>
             </div>
+            </>
         )
     }
 }
