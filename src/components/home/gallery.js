@@ -17,7 +17,7 @@ import gallery9 from '../../images/gallery/gallery9.jpg';
 class Gallery extends React.Component{
     params = {
         pagination: {
-          el: '.swiper-pagination',
+          el: '.swiper-pagination-gallery',
           type: 'bullets',
           clickable: true
         },

@@ -3,7 +3,7 @@ import axios from 'axios';
 export const registerAction = formValues => async dispatch => {
     const data = formValues;
     try{
-        const response = await axios.post('http://localhost:3001/register', data);
+        const response = await axios.post('https://aagaz-server.herokuapp.com/register', data);
         dispatch({
             type: 'REGISTER',
             payload: response.data.data
@@ -24,7 +24,7 @@ export const registerAction = formValues => async dispatch => {
 export const loginAction = formValues => async dispatch => {
     const data = formValues
     try{
-        const response = await axios.post('http://localhost:3001/login', data);
+        const response = await axios.post('https://aagaz-server.herokuapp.com/login', data);
         dispatch({
             type: 'LOGIN',
             payload: response.data
@@ -46,7 +46,7 @@ export const loginAction = formValues => async dispatch => {
 
 export const loginDataAction = (token) => async dispatch => {
     try{
-        const response = await axios.get('http://localhost:3001/logindata',{
+        const response = await axios.get('https://aagaz-server.herokuapp.com/logindata',{
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -78,7 +78,7 @@ export const logoutAction = () => dispatch => {
 export const forgotPasswordAction = formValues => async dispatch => {
     const data = formValues;
     try{
-        const response = await axios.post('http://localhost:3001/forgotpassword' ,data);
+        const response = await axios.post('https://aagaz-server.herokuapp.com/forgotpassword' ,data);
         dispatch({
             type: 'FORGOTPASSWORD',
             payload: response.data.msg
@@ -100,7 +100,7 @@ export const forgotPasswordAction = formValues => async dispatch => {
 export const resetPasswordAction = formValues => async dispatch => {
     const data = formValues;
     try{
-        const response = await axios.post('http://localhost:3001/resetpassword' ,data);
+        const response = await axios.post('https://aagaz-server.herokuapp.com/resetpassword' ,data);
         dispatch({
             type: 'RESETPASSWORD',
             payload: response.data.msg
@@ -123,7 +123,7 @@ export const eventRegistrationAction = (formValues, eventName) =>  async dispatc
     const token =window.localStorage.getItem('token')
 
     try{
-        const response = await axios.post('http://localhost:3001/eventregistration',
+        const response = await axios.post('https://aagaz-server.herokuapp.com/eventregistration',
         data ,
         {
             headers: {
@@ -149,7 +149,7 @@ export const eventRegistrationAction = (formValues, eventName) =>  async dispatc
 
 export const emailVerifyAction = (token) => async dispatch => {
     try{
-        const response = await axios.get(`http://localhost:3001/verification/${token}`)
+        const response = await axios.get(`https://aagaz-server.herokuapp.com/verification/${token}`)
 
         dispatch({
             type: 'EMAILVERIFY',

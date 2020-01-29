@@ -71,7 +71,7 @@ class Navbar extends React.Component{
                     </Link>
                     
                     { this.props.authReducer && !this.props.authReducer.isLoggedIn && <Link to ='/login' className='link'><li className='highlight'>Login</li> </Link>}
-                    {this.props.authReducer.isLoggedIn && <li className='highlight'>
+                    {this.props.authReducer.isLoggedIn && <li onClick={(e) => {e.stopPropagation()}} className='highlight'>
                         <i className="fa fa-user"></i> 
                         {this.props.authReducer.loginData.firstName}
                         <button className='logout' onClick={() => {this.props.logoutAction()}}>Logout</button>

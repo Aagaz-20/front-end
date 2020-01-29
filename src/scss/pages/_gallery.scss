@@ -160,7 +160,7 @@
     }
 }
 
-.swiper-pagination{
+.swiper-pagination-gallery{
     position: absolute;
     z-index: 105;
     transform: translateY(0px) scale(1.5);
@@ -177,11 +177,13 @@
 }
 
 @media only screen and (max-width: 600px){
-.swiper-container{
+.swiper-container-coverflow{
     height: 300px !important;
     width: 100% !important;
+
+    .swiper-wrapper{
+        height: 300px !important;
+    }
 }
-.swiper-wrapper{
-    height: 300px !important;
-}
+
 }
