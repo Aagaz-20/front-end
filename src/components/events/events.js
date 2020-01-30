@@ -314,7 +314,7 @@ class Events extends React.Component{
                 },
                 {
                     name: 'Aryaman Gupta',
-                    phonr: '9682650783'
+                    phone: '9682650783'
                 }
             ],
             [

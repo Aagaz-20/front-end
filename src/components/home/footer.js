@@ -34,7 +34,7 @@ class Footer extends React.Component{
                     <span className='contacts'>Organisers // <a href='tel: +91 91490 30038'>9149030038</a></span>
                     <span className='contacts'>Hospitality // <a href='tel: +91 8533007497'>8533007497</a> </span>
                     <span className='contacts'>Events // <a href='tel: +91 91706 62550'>9170662550</a></span>
-                    <span className='contacts'>Website // <a href='tel: +91 8126560202'>8126560602</a></span>
+                    <span className='contacts'>Website // <a href='tel: +91 8126560602'>8126560602</a></span>
                     <span className='contacts'>Public Relations // <a href='tel: +91 9149225028'>9149225028</a></span>
                 </div>
                 <div className='help-container'>

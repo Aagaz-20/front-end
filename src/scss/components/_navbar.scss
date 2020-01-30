@@ -38,7 +38,7 @@
 
             @media only screen and (max-width: 600px){
                 display: block;
-                padding: 15px 20px;
+                padding: 1.6vh 20px;
             }
 
             &.highlight{
@@ -77,6 +77,11 @@
                     font-size: 22px;
                     font-family: 'Staatliches', cursive;
                     cursor: pointer;
+
+                    @media only screen and (max-width: 600px){
+                        width: 100%;
+                        top: 46px;
+                    }
                 }
             }
         }

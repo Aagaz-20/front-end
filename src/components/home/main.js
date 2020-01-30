@@ -5,7 +5,7 @@ import { store } from 'react-notifications-component';
 
 //video
 import teaserVideo from '../../images/teaser-video.mp4';
-
+import teaserVideo2 from '../../images/teaser-video2.mp4';
 class Main extends React.Component{
 
     notification = () => {
@@ -29,7 +29,7 @@ class Main extends React.Component{
         return(
             <div className='section-main'>
                 <video autoPlay='autoplay' muted loop className='teaser-video'>
-                <source src={teaserVideo} type="video/mp4" />
+                <source src={window.innerWidth > 600 ? teaserVideo : teaserVideo2} type="video/mp4" />
                 Your browser does not support HTML5 video.
                 </video>
                 <div className='section-main--wrapper'>

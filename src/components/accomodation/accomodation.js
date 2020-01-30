@@ -47,7 +47,7 @@ class Accommodation extends React.Component{
                                     Registration + Accommodation Charges is Rs.800 per person.
                                     Caution money is Rs. 200 per person (which will be refunded after the Fest)</span>
                                 </li>
-                                <li>If no Rccommodation, Registration fees is Rs.400/- per person.</li>
+                                <li>If no Accommodation, Registration fees is Rs.400/- per person.</li>
                                 <li>
                                 The payment receipt has to be submitted at the time of Reporting.
                                 </li>

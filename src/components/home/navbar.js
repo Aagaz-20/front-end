@@ -27,10 +27,10 @@ class Navbar extends React.Component{
 
     navClick = () => {
         this.setState({ path: window.location.pathname.split('/')[1] })
-        if(this.state.top === 100){
+        if(this.state.top === 200){
             this.setState({ top: 0, class: 'active'})
             }else{
-                this.setState({ top: 100, class: null})
+                this.setState({ top: 200, class: null})
             }
     }
 
