@@ -3,6 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import validate from '../utils/validation';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import { store } from 'react-notifications-component';
 
 //actions
 import { forgotPasswordAction, resetPasswordAction } from '../../actions';
@@ -12,7 +13,53 @@ import shapeImage from '../../images/green-yellow-shape.png';
 
 class ResetPassword extends React.Component{
     state = {
-        form: 1
+        form: 1,
+        error: false,
+        loading: false,
+        otp: false
+    }
+
+    componentDidUpdate(){
+        const { errors } = this.props;
+        
+        if( errors.error && this.state.error && !this.state.loading ){
+            console.log(errors)
+            store.addNotification({
+                title:  errors.error.title,
+                message:  errors.error.msg,
+                type: "danger",
+                insert: "bottom",
+                width: 300,
+                container: "bottom-left",
+                animationIn: ["animated", "fadeIn"],
+                animationOut: ["animated", "fadeOut"],
+                dismiss: {
+                duration: 4000,
+                onScreen: true
+                }
+            });
+            this.setState({ error: false});
+        }
+
+        if( this.state.otp && !this.state.loading ){
+            // console.log(errors)
+            store.addNotification({
+                title:  'OTP Sent',
+                message:  'Please cheack your email inbox for OTP',
+                type: "success",
+                insert: "bottom",
+                width: 300,
+                container: "bottom-left",
+                animationIn: ["animated", "fadeIn"],
+                animationOut: ["animated", "fadeOut"],
+                dismiss: {
+                duration: 4000,
+                onScreen: true
+                }
+            });
+            this.setState({ otp: false});
+        }
+        
     }
 
     renderField = ({ input, label, type, input: { value }, meta: {pristine, valid, dirty, active, touched, error } }) => (
@@ -33,14 +80,22 @@ class ResetPassword extends React.Component{
         </div>
     );
 
-    onFormOneSubmit = (formValues) => {
-        console.log(formValues);
-        this.props.forgotPasswordAction(formValues);
-        this.setState({ form: 2})
+    onFormOneSubmit = async (formValues) => {
+        // console.log(formValues);
+        this.setState({ loading: true, otp: true})
+        const response = await this.props.forgotPasswordAction(formValues);
+        // this.setState({ form: 2})
+        if(response){
+            this.setState({loading: false, form: 2})
+        }
     }
-    onFormTwoSubmit = (formValues) => {
-        console.log(formValues);
-        this.props.resetPasswordAction(formValues);
+    onFormTwoSubmit = async (formValues) => {
+        // console.log(formValues);
+        this.setState({loading: true, error: true})
+        const response  = await this.props.resetPasswordAction(formValues);
+        if(response){
+            this.setState({loading: false})
+        }
     }
     // onFormThreeSubmit = (formValues) => {
     //     console.log(formValues);
@@ -49,6 +104,20 @@ class ResetPassword extends React.Component{
 
     render(){
         if(this.props.resetPasswordData){
+            store.addNotification({
+                title:  'Success',
+                message:  'Password Successfully changed. Please Login with your new Password',
+                type: "success",
+                insert: "bottom",
+                width: 300,
+                container: "bottom-left",
+                animationIn: ["animated", "fadeIn"],
+                animationOut: ["animated", "fadeOut"],
+                dismiss: {
+                duration: 4000,
+                onScreen: true
+                }
+            });
             return <Redirect to='/login' />
         }
         return(
@@ -95,7 +164,8 @@ const formWrapper =  reduxForm({
 const mapStateToprops = state => {
     return{
         forgotPasswordData: state.authReducer.forgotPassword,
-        resetPasswordData: state.authReducer.resetPassword
+        resetPasswordData: state.authReducer.resetPassword,
+        errors: state.errors
     }
 }
 

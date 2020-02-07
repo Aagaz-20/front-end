@@ -36,6 +36,10 @@
             font-weight: 500;
             transition: all 0.5s ease;
 
+            @media only screen and (max-width: 1300px){
+                padding: 10px 10px;
+            }
+
             @media only screen and (max-width: 600px){
                 display: block;
                 padding: 1.6vh 20px;

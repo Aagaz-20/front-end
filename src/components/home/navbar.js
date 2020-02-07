@@ -62,9 +62,9 @@ class Navbar extends React.Component{
                     <Link to ='/pronites' className='link'>
                     <li>Pronites</li>
                     </Link>
-                    <li><a href='https://drive.google.com/file/d/16KEZWjWFAd82XZfYt5dnP-tvN2ITEM-l/view' target='_blank' rel="noopener noreferrer">Brochure</a></li>
-                    <Link to ='/sponsers' className='link'>
-                    <li>Sponsers</li>
+                    <li><a href='https://drive.google.com/open?id=16yRhnoQvaE7D_JFl5o7RqUMSGiLIXkp1' target='_blank' rel="noopener noreferrer">Brochure</a></li>
+                    <Link to ='/sponsors' className='link'>
+                    <li>Sponsors</li>
                     </Link>
                     <Link to ='/contactus' className='link'>
                     <li>Contact Us</li>

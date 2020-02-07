@@ -34,16 +34,16 @@
         top: 12%;
         transform: translateX(-50%);
 
-        @media only screen and (max-width: 600px){
-            position: relative;
-            top: 0;
-            left: 0;
-            transform: none;
-            font-size: 12vw;
-            padding-top: 120px;
-            display: block;
-            text-align: center;
-        }
+            @media only screen and (max-width: 600px){
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;
+                font-size: 12vw;
+                padding-top: 120px;
+                display: block;
+                text-align: center;
+            }
     }
 
     .page-content{
@@ -146,14 +146,21 @@
                     display: block;
 
                     @media only screen and (max-width: 600px){
-                        margin-top: 40px;
+                        
                         font-size: 5vw;
+
+                        &:nth-child(1){
+                            margin-top: 40px;
+                        }
                     }
                 }
 
                 span.note{
                     display: block;
+                    font-size: 0.8vw;
+                    @media only screen and (max-width: 600px){
                     font-size: 2vw;
+                    }
                 }
 
                 .button{

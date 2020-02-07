@@ -41,14 +41,16 @@
             transform: none;
             margin: 0 auto;
             text-align: center;
-            font-size: 6vw;
+            font-size: 4vw;
             display: block;
             margin-top: 60px;
             padding: 20px;
+            padding-bottom: 50px;
+
         }
 
         &--verified{
-            font-size: 5vw;
+            font-size: 4vw;
             color: white;
             font-family: 'Nunito', sans-serif;
         }

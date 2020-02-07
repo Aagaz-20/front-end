@@ -146,6 +146,9 @@
                             }
 
                             &--name{
+                                @media only screen and (max-width: 1300px){
+                                right: 30%;
+                                }
                                 @media only screen and (max-width: 390px){
                                     right: 70px;
                                 }
@@ -166,6 +169,10 @@
                             transform: scale(1.1);
                             margin-top: 120px;
                             margin-right: 110px;
+
+                            @media only screen and (max-width: 1300px){
+                                margin-right: 50px;
+                            }
 
                             @media only screen and (max-width: 600px){
                                 margin: 0 auto;
@@ -266,8 +273,8 @@
                             color: white;
                             position: absolute;
                             bottom: 3px;
-                            right: 70px;
-                            font-size: 33px;
+                            right: 25%;
+                            font-size: 2vw;
                             font-weight: 600;
                             font-family: 'Staatliches', cursive;
                             z-index: 100;

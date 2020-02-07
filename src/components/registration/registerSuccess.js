@@ -26,7 +26,7 @@ class RegisterSuccess extends React.Component{
                         <span>Before Login, Please Verify your Email Address by clicking on the link sent to you on your given email address</span>
                     </div>
                     {this.props.authReducer && this.props.authReducer.data && this.props.authReducer.data.college !== 'HBTU' && this.props.authReducer.data.accomodation === 'no' && <div className='registration-charge'>
-                        You have pay the Registraion Charge of Rs.400/-.
+                        You have pay the Registraion Charge of Rs.600/-. And then you can Register for Events/Participating Sports in the events section.
                         <button onClick={this.onPaymentClick}  className="button type1">Pay Now</button>
                         {this.state.popup && <div className='popup' >
                             <iframe src="https://www.townscript.com/widget/aagaz-registration-304212" frameBorder="0"></iframe> 
@@ -35,6 +35,7 @@ class RegisterSuccess extends React.Component{
                         Note: 
                         <ul>
                             <li>This Charge is per Person</li>
+                            <li>This Charge includes Registraion Charge of Rs.400 and a Caution Money of Rs.200 which will be returned after the event.</li>
                             <li>By Paying this Charge you can Participate in Any Sport Event once</li>
                             <li>You will get free Entries in ProNites</li>
                             <li>Please Note that Accommodation is not includes in this ticket (" If you want Accommodation then you can pay Accommodation charge on accomodation page. If you opt for Accommodation, In that case you don't need to pay this charge ")</li>
@@ -43,7 +44,7 @@ class RegisterSuccess extends React.Component{
                         </ul>
                     </div>}
                     {this.props.authReducer && this.props.authReducer.data && this.props.authReducer.data.college !== 'HBTU' && this.props.authReducer.data.accomodation === 'yes' && <div className='registration-charge'>
-                        Please Pay the Accommodation Charge on Accommodation page
+                        Please Pay the Accommodation Charge on Accommodation page. And then you can Register for Events/Participating Sports in the events section.
                         <Link to='/accommodation' className='link'><button className='button type1'>Pay Now</button></Link>
                     </div>}
                 </div>

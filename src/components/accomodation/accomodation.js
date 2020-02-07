@@ -8,7 +8,8 @@ class Accommodation extends React.Component{
     state={
         option: 1,
         activeArr: [,'active', ],
-        popup: false
+        popup1: false,
+        popup2: false
 
     }
 
@@ -18,11 +19,18 @@ class Accommodation extends React.Component{
         this.setState({ option: option, activeArr: arr})
     }
 
-    onPaymentClick = () => {
-        if(this.state.popup === false){
-        this.setState({popup: true})
+    onPaymentOneClick = () => {
+        if(this.state.popup1 === false){
+        this.setState({popup1: true})
         }else{
-            this.setState({ popup: false})
+            this.setState({ popup1: false})
+        }
+    }
+    onPaymentTwoClick = () => {
+        if(this.state.popup2 === false){
+        this.setState({popup2: true})
+        }else{
+            this.setState({ popup2: false})
         }
     }
 
@@ -47,7 +55,7 @@ class Accommodation extends React.Component{
                                     Registration + Accommodation Charges is Rs.800 per person.
                                     Caution money is Rs. 200 per person (which will be refunded after the Fest)</span>
                                 </li>
-                                <li>If no Accommodation, Registration fees is Rs.400/- per person.</li>
+                                <li>If no Accommodation, Registration fees is Rs.600/- per person which also includes the caution money of Rs.200/-</li>
                                 <li>
                                 The payment receipt has to be submitted at the time of Reporting.
                                 </li>
@@ -83,10 +91,18 @@ class Accommodation extends React.Component{
                             {this.props.authReducer && this.props.authReducer.isLoggedIn && <div>
                                 <span className='payment'>Pay Your Accommodation Charges Here:</span>
                                 {/* <button className='button type1'>Pay</button> */}
-                                <button onClick={this.onPaymentClick}  className="button type1">Get Accommodation</button>
-                                {this.state.popup && <div className='popup' >
+                                <button onClick={this.onPaymentOneClick}  className="button type1">Get Accommodation</button>
+                                {this.state.popup1 && <div className='popup' >
                                 <iframe src="https://www.townscript.com/widget/aagaz-accomodation-440341" frameBorder="0"></iframe> 
-                                <button onClick={this.onPaymentClick}>Cancel</button>
+                                <button onClick={this.onPaymentOneClick}>Cancel</button>
+                                </div>}
+                                <span className='note'>Accommodation Charges includes your Registration Charges and the Caution money</span><br />
+                                <span className='payment'>Don't want Accommodation?</span>
+                                <span className='payment'>You can Just pay the Registration Charge only</span>
+                                <button onClick={this.onPaymentTwoClick}  className="button type1">Pay Now</button>
+                                {this.state.popup2 && <div className='popup' >
+                                <iframe src="https://www.townscript.com/widget/aagaz-registration-304212" frameBorder="0"></iframe> 
+                                <button onClick={this.onPaymentTwoClick}>Cancel</button>
                                 </div>}
                                 <span className='note'>*Please bring the Receipt of the Payment along with you at the Time of Fest.</span>
                             </div>}

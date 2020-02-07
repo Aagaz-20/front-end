@@ -84,7 +84,7 @@ class Timeline extends React.Component{
                 time: '7:00 PM',
                 event: 'Fun & fair / Open Mic(Informal Events)',
                 venue: 'East Campus'
-            },
+            }
         ]
     }
 
@@ -122,7 +122,81 @@ class Timeline extends React.Component{
                 day2Position: 500,
                 day3Position: 570,
                 activeTime: 1,
-                timelineData: ['Inauguration of Fest with the Starting Speech from Vice Chancellor of HBTU', 'Sports Events start', 'Entries will Start for Pronite ']
+                timelineData: [
+                    {
+                        time: '8:00 AM',
+                        event: 'Basketball League matches (Boys & Girls)',
+                        venue: 'West Campus',
+                        event2: 'Badminton League matches (Boys & Girls)',
+                        venue2: 'Green Park',
+                        event3: 'Volleyball League matches',
+                        venue3: 'West Campus'
+                        
+                    },
+                    {
+                        time: '8:30 AM',
+                        event: 'Football League matches',
+                        venue: 'East Campus',
+                        event2: 'Kabaddi League matches',
+                        venue2: 'West Campus',
+                        event3: 'Cricket League matches',
+                        venue3: 'West Campus'
+                    },
+                    {
+                        time: '10:00 AM',
+                        event: 'Inauguration/ opening ceremony',
+                        venue: 'East Campus'
+                    },
+                    {
+                        time: '12:00 PM',
+                        event: '800m(Boys) [Semi-Final] ',
+                        venue: 'East Campus',
+                        event2: 'Chess matches (Boys & Girls)',
+                        venue2: 'West Campus'
+                    },
+                    {
+                        time: '1:00 PM',
+                        event: '800m(Girls) [Semi-Final]',
+                        venue: 'East Campus',
+                        event2: 'Table Tennis League matches (Boys & Girls)',
+                        venue2: 'Green Park'
+                    },
+                    {
+                        time: '3:00 PM',
+                        event: '200m(Boys) [Semi-Final] ',
+                        venue: 'East Campus'
+                    },
+                    {
+                        time: '3:30 PM',
+                        event: '200m(Girls) [Semi-Final] ',
+                        venue: 'East Campus'
+                    },
+                    {
+                        time: '4:00 PM',
+                        event: 'Long Jump(Boys) [Final] ',
+                        venue: 'East Campus'
+                    },
+                    {
+                        time: '4:30 PM',
+                        event: 'Long Jump(Girls) [Final]',
+                        venue: 'East Campus'
+                    },
+                    {
+                        time: '5:00 PM',
+                        event: '400m(Boys) [Semi-Final] ',
+                        venue: 'East Campus'
+                    },
+                    {
+                        time: '5:30 PM',
+                        event: '400m(Girls) [Semi-Final]',
+                        venue: 'East Campus'
+                    },
+                    {
+                        time: '7:00 PM',
+                        event: 'Fun & fair / Open Mic(Informal Events)',
+                        venue: 'East Campus'
+                    },
+                ]
             })
         }else if(day === 2){
             this.setState({

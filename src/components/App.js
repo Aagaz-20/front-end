@@ -31,6 +31,10 @@ class App extends React.Component{
       
       if(window.localStorage.getItem('token')){
         this.props.loginDataAction(window.localStorage.getItem('token'))
+        if(this.props.authReducer && this.props.authReducer.loginData){
+        const msg = new SpeechSynthesisUtterance(`Welcome back ${this.props.authReducer.loginData.name}`);
+        window.speechSynthesis.speak(msg)
+        }
       }else{
         this.props.logoutAction();
       }
@@ -61,7 +65,7 @@ class App extends React.Component{
                 <Route path='/resetpassword' exact component={ResetPassword} />
                 <Route path='/events' exact component={Events} />
                 <Route path='/accommodation' exact component={Accommodation} />
-                <Route path='/sponsers' exact component={Sponsers} />
+                <Route path='/sponsors' exact component={Sponsers} />
                 <Route path='/pronites' exact component={Pronites} />
                 <Route path='/contactus' exact component={Team} />
                 <Route path='/emailverify/:token' exact component={EmailVerify} />

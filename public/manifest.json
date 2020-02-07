@@ -1,6 +1,7 @@
 {
   "short_name": "Aagaz",
-  "name": "Aagaz 2020",
+  "name": "Aagaz || HBTU's Sports Fest",
+  "keywords": ["aagaz", "aagazhbtu", "sports fest", "top sports fest", "hbtu", "sports", "games", "fests", "sports hbtu", "aagaz hbti", "hbti","kanpur"],
   "icons": [
     {
       "src": "favicon.ico",
@@ -37,9 +38,9 @@
   "scope":".",
   "display": "standalone",
   "orientation":"portrait-primary",
-  "theme_color": "#0693e3",
-  "background_color": "#0693e3",
-  "description":"Official website of AAGAZ 2020",
+  "theme_color": "#73e770",
+  "background_color": "#73e770",
+  "description":"Aagaz 2020, 2nd Edition of HBTU's Sports Fest. One of the Biggest of its kind. Join Us on 15th, 16th and 17th of February, 2020",
   "dir": "ltr", 
   "lang": "en-US"
 }

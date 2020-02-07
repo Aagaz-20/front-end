@@ -119,11 +119,7 @@ class Events extends React.Component{
                 *Doubles(girls)"
             ],
             [
-                "The teams would be divided into two groups consisting of 3 team each",
-                "Teams would play 2 match each, in the qualifying stage, among their respective groups",
-                "The top teams from each group will compete in Final",
-                "Each qualifier match would comprise of 2 halfes of 20 minutes each with a 5 minutes break in between",
-                "While the finale match would comprise of 2 halfes of 25 minutes each with a 5 minutes break in between"
+                "Standard Rules of kabaddi will be followed",
             ],
             [
                 "Team should be of 4 players with atleast one girl."
