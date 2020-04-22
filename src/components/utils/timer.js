@@ -135,37 +135,37 @@ const AnimatedCard = ({ animation, digit }) => {
         let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         let seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-        if( days !== this.state.days) {
-            const daysShuffle = !this.state.daysShuffle;
-            this.setState({
-                days,
-                daysShuffle
-            });
-        }
+        // if( days !== this.state.days) {
+        //     const daysShuffle = !this.state.daysShuffle;
+        //     this.setState({
+        //         days,
+        //         daysShuffle
+        //     });
+        // }
 
-          if( hours !== this.state.hours) {
-              const hoursShuffle = !this.state.hoursShuffle;
-              this.setState({
-                  hours,
-                  hoursShuffle
-              });
-          }
-          // on minute chanage, update minutes and shuffle state
-          if( minutes !== this.state.minutes) {
-              const minutesShuffle = !this.state.minutesShuffle;
-              this.setState({
-                  minutes,
-                  minutesShuffle
-              });
-          }
-          // on second chanage, update seconds and shuffle state
-          if( seconds !== this.state.seconds) {
-              const secondsShuffle = !this.state.secondsShuffle;
-              this.setState({
-                  seconds,
-                  secondsShuffle
-              });
-          }
+        //   if( hours !== this.state.hours) {
+        //       const hoursShuffle = !this.state.hoursShuffle;
+        //       this.setState({
+        //           hours,
+        //           hoursShuffle
+        //       });
+        //   }
+        //   // on minute chanage, update minutes and shuffle state
+        //   if( minutes !== this.state.minutes) {
+        //       const minutesShuffle = !this.state.minutesShuffle;
+        //       this.setState({
+        //           minutes,
+        //           minutesShuffle
+        //       });
+        //   }
+        //   // on second chanage, update seconds and shuffle state
+        //   if( seconds !== this.state.seconds) {
+        //       const secondsShuffle = !this.state.secondsShuffle;
+        //       this.setState({
+        //           seconds,
+        //           secondsShuffle
+        //       });
+        //   }
       }
     
       render() {
